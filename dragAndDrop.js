@@ -22,11 +22,14 @@ function shuffle(array) {
 }
 let phrase = phraseArr[Math.floor(Math.random() * phraseArr.length)];
 let wordsArr = shuffle(phrase.split(" "));
+document.write(`<div class="col l12 s12 center colCustom colC" id="c3">
+<div class="container">`);
 for (let i = 0; i < wordsArr.length; i++) {
   document.write(
-    `<div id="dra${i}" class="card" draggable="true" ondragstart="drag(event)">${wordsArr[i]}</div>`
+    `<div id="drag${i}" class="card" draggable="true" ondragstart="drag(event)">${wordsArr[i]}</div>`
   );
 }
+document.write(`</div></div>`);
 let dropField = document.getElementById("word");
 function allowDrop(event) {
   event.preventDefault();
@@ -50,4 +53,10 @@ function check(event) {
   let str = dropField.innerText.trim();
   // console.log(str);
   alert(str == phrase ? "Правильно!" : "Помилка");
+}
+
+let cleanButton = document.getElementById("clean");
+cleanButton.addEventListener("click", clean);
+function clean() {
+  dropField.innerText = "";
 }

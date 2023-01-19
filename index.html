@@ -5,9 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <style>
       #word {
-        width: 400px;
+        width: 70%;
         height: 300px;
         background-color: tan;
       }
@@ -21,23 +30,25 @@
     </style>
   </head>
   <body>
-    <div id="word" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
-    <div id="msg"></div>
-    <!-- <div id="drag1" class="card" draggable="true" ondragstart="drag(event)">
-      This
+    <br />
+    <div class="col l12 s12 center colCustom colC" id="c3">
+      <div class="container">
+        <div
+          class="container flow-text z-depth-3"
+          id="word"
+          ondragover="allowDrop(event)"
+          ondrop="drop(event)"
+        ></div>
+        <!-- <div id="msg"></div> -->
+        <!-- </div>
+      <div class="col s12 m4 l3"> -->
+        <br />
+        <a class="waves-effect waves-light btn" id="check">Check</a>
+        <a class="waves-effect waves-light btn" id="clean">Clean</a>
+        <a class="waves-effect waves-light btn" id="speak">Speak</a><br />
+      </div>
     </div>
-    <div id="drag2" class="card" draggable="true" ondragstart="drag(event)">
-      house
-    </div>
-    <div id="drag3" class="card" draggable="true" ondragstart="drag(event)">
-      is
-    </div>
-    <div id="drag4" class="card" draggable="true" ondragstart="drag(event)">
-      beautiful!
-    </div>
-    <br /> -->
-    <button id="check">Check</button>
-    <button id="speak">Speak</button>
+    <br />
     <script src="./dragAndDrop.js"></script>
     <script src="./voice.js"></script>
   </body>
