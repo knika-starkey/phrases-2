@@ -36,8 +36,9 @@ function allowDrop(event) {
 }
 function drag(event) {
   event.dataTransfer.setData("text", event.target.innerHTML);
+  event.target.style.opacity = "0.4";
 
-  //event.target.style.opacity = "0.4";
+  //
 }
 
 function drop(event) {
@@ -58,5 +59,9 @@ function check(event) {
 let cleanButton = document.getElementById("clean");
 cleanButton.addEventListener("click", clean);
 function clean() {
+  let divWord = document.getElementsByClassName("card");
   dropField.innerText = "";
+  for (let i = 0; i < divWord.length; i++) {
+    divWord[i].style.opacity = "1.0";
+  }
 }
